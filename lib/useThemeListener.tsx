@@ -1,7 +1,11 @@
 "use client";
-
 import { useEffect } from "react";
 
+/**
+ * A custom hook for listening system color scheme changes.
+ *
+ * @param handleChange Handler callback that'll be called when user changes preferred color scheme.
+ */
 export default function useThemeListener(
 	handleChange: (theme: string) => void,
 ) {
