@@ -2,12 +2,63 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
+@layer base {
+	:root {
+		--color-neutral-50: theme(colors.gray.50);
+		--color-neutral-100: theme(colors.gray.100);
+		--color-neutral-200: theme(colors.gray.200);
+		--color-neutral-300: theme(colors.gray.300);
+		--color-neutral-400: theme(colors.gray.400);
+		--color-neutral-500: theme(colors.gray.500);
+		--color-neutral-600: theme(colors.gray.600);
+		--color-neutral-700: theme(colors.gray.700);
+		--color-neutral-800: theme(colors.gray.800);
+		--color-neutral-900: theme(colors.gray.900);
+		--color-neutral-950: theme(colors.gray.950);
+	}
 
-}
+	.theme-fuchsia {
+		--color-primary-50: #fbf6fd;
+		--color-primary-100: #f7ecfb;
+		--color-primary-200: #edd7f7;
+		--color-primary-300: #e2b8ef;
+		--color-primary-400: #d08ee4;
+		--color-primary-500: #ba63d4;
+		--color-primary-600: #9e42b7;
+		--color-primary-700: #843497;
+		--color-primary-800: #6e2c7c;
+		--color-primary-900: #5d2966;
+		--color-primary-950: #3a1042;
+	}
 
-@media (prefers-color-scheme: dark) {
-  :root {
+	.theme-green {
+		--color-primary-50: #f2fcf1;
+		--color-primary-100: #e0f9df;
+		--color-primary-200: #c1f2c0;
+		--color-primary-300: #90e68f;
+		--color-primary-400: #65d463;
+		--color-primary-500: #33b631;
+		--color-primary-600: #259623;
+		--color-primary-700: #20761f;
+		--color-primary-800: #1d5e1d;
+		--color-primary-900: #1a4d1a;
+		--color-primary-950: #092a0a;
+	}
 
-  }
+	.theme-light {
+		--bgNeutral: theme(colors.white);
+		--fgNeutral: var(--color-neutral-900);
+
+		--bgPrimary: var(--color-primary-200);
+		--fgPrimary: var(--color-primary-800);
+		--primary: var(--color-primary-600);
+	}
+
+	.theme-dark {
+		--bgNeutral: var(--color-neutral-900);
+		--fgNeutral: theme(colors.white);
+		--bgPrimary: var(--color-primary-800);
+		--fgPrimary: var(--color-primary-100);
+		--primary: var(--color-primary-400);
+	}
 }
