@@ -1,7 +1,9 @@
 "use client";
 import useStoredState from "@/lib/useStoredState";
 import useThemeListener from "@/lib/useThemeListener";
+import { FaSun, FaMoon, FaPalette } from "react-icons/fa";
 import { useEffect } from "react";
+import { cn } from "@/lib/helpers/utils";
 
 export default function ThemeSelect() {
 	const [mode, setMode] = useStoredState<string>("light", "theme-mode");
@@ -27,22 +29,29 @@ export default function ThemeSelect() {
 	}, [theme, mode]);
 
 	return (
-		<div className="flex gap-2">
+		<>
 			<button
+				title={`Toggle ${mode === "dark" ? "light" : "dark"} mode`}
+				className="p-2 bg-primary-900 text-primary-50 rounded-full opacity-25 hover:opacity-100 transition-opacity duration-500"
 				onClick={() =>
 					mode === "dark" ? setMode("light") : setMode("dark")
 				}>
-				{mode}
+				{mode === "dark" ? <FaSun /> : <FaMoon />}
 			</button>
 
 			<button
+				title="Change theme"
+				className={cn(
+					"p-2 text-primary-50 rounded-full opacity-25 hover:opacity-100 transition-opacity duration-500",
+					theme === "green" ? "bg-pink-600" : "bg-green-600",
+				)}
 				onClick={() =>
 					theme === "fuchsia"
 						? setTheme("green")
 						: setTheme("fuchsia")
 				}>
-				{theme}
+				<FaPalette />
 			</button>
-		</div>
+		</>
 	);
 }

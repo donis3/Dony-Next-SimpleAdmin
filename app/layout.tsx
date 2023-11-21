@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import "./globals.css";
+import './globals.css'
 import { cn } from "@/lib/helpers/utils";
 
 export const metadata: Metadata = {
-	title: "Next Dashboard",
+	title: "Landing Page",
 	description: "An admin dashboard - learn by making project",
 };
 

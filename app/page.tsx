@@ -1,5 +1,6 @@
-import ClientComponent from "./ClientComponent";
-import ThemeSelect from "@/components/theme/ThemeSelect";
+import Link from "next/link";
+import ClientComponent from "./ui/ClientComponent";
+import ThemeSelect from "@/app/ui/theme/ThemeSelect";
 
 export default function Home() {
 	return (
@@ -10,7 +11,7 @@ export default function Home() {
 			<main className="flex flex-col gap-y-10 p-4">
 				<section>
 					<h1 className="bg-bgPrimary text-fgPrimary p-3 font-bold text-xl">
-						Using custom tw theme!
+						Welcome to landing page
 					</h1>
 					<p className="p-3">
 						Lorem, ipsum dolor sit amet consectetur adipisicing
@@ -27,6 +28,19 @@ export default function Home() {
 					</h2>
 					<div className="p-3">
 						<ClientComponent />
+					</div>
+				</section>
+
+				<section>
+					<h2 className="bg-bgPrimary text-fgPrimary p-3 font-bold text-lg">
+						Looking for the dashboard?
+					</h2>
+					<div className="p-3">
+						<Link
+							href={"/dashboard"}
+							className="p-2 bg-primary-300 text-primary-900 rounded-sm">
+							Go to dashboard
+						</Link>
 					</div>
 				</section>
 			</main>
