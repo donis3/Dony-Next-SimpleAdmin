@@ -1,7 +1,7 @@
 "use client";
 import useStoredState from "@/lib/useStoredState";
 import useThemeListener from "@/lib/useThemeListener";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 export default function ThemeSelect() {
 	const [mode, setMode] = useStoredState<string>("light", "theme-mode");

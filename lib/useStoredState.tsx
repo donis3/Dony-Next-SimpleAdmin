@@ -16,7 +16,6 @@ export default function useStoredState<T>(
 			const currentValue = localStorage.getItem(storageKey) as T;
 			if (!currentValue) throw new Error(); //jump to catch block if current value doesn't exist
 			if (state !== currentValue) {
-				console.log(`Current value is ${currentValue} `);
 				setState(currentValue);
 			}
 		} catch (error) {

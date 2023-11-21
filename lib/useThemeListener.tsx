@@ -48,8 +48,6 @@ export default function useThemeListener(
 			colorSchemeQuery.addEventListener("change", updateColorScheme);
 		}
 
-		console.log(getPreferredColorScheme());
-
 		return () => {
 			if (window.matchMedia) {
 				window
