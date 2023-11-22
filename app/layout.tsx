@@ -14,7 +14,7 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang="en" className={cn("theme-green", "theme-fuchsia")}>
-			<body className="bg-bgNeutral text-fgNeutral theme-light dark:theme-dark">
+			<body className="bg-bgNeutral text-fgNeutral theme-light dark:theme-dark transition-colors duration-300">
 				{children}
 			</body>
 		</html>

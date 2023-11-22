@@ -57,7 +57,7 @@
 	.theme-dark {
 		--bgNeutral: var(--color-neutral-900);
 		--fgNeutral: theme(colors.white);
-		--bgPrimary: var(--color-primary-800);
+		--bgPrimary: var(--color-primary-500);
 		--fgPrimary: var(--color-primary-100);
 		--primary: var(--color-primary-400);
 	}

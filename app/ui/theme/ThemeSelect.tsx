@@ -36,21 +36,25 @@ export default function ThemeSelect() {
 				onClick={() =>
 					mode === "dark" ? setMode("light") : setMode("dark")
 				}>
-				{mode === "dark" ? <FaSun /> : <FaMoon />}
+				{mode === "dark" ? (
+					<FaSun aria-label="Sun Icon" />
+				) : (
+					<FaMoon aria-label="Moon Icon" />
+				)}
 			</button>
 
 			<button
 				title="Change theme"
 				className={cn(
 					"p-2 text-primary-50 rounded-full opacity-25 hover:opacity-100 transition-opacity duration-500",
-					theme === "green" ? "bg-pink-600" : "bg-green-600",
+					theme === "fuchsia" ? "bg-pink-600" : "bg-green-600",
 				)}
 				onClick={() =>
 					theme === "fuchsia"
 						? setTheme("green")
 						: setTheme("fuchsia")
 				}>
-				<FaPalette />
+				<FaPalette aria-label="Palette Icon" />
 			</button>
 		</>
 	);
