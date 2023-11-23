@@ -24,17 +24,6 @@ export default function DashboardContextProvider({
 		return setMenuOpen(!menuOpen);
 	};
 
-	// Slide main content a little for effect when menu is open
-	useEffect(() => {
-		const mainContent = document.querySelector("main");
-
-		if (menuOpen === true) {
-			mainContent?.classList.add("translate-x-20", "overflow-hidden");
-		} else {
-			mainContent?.classList.remove("translate-x-20", "overflow-hidden");
-		}
-	}, [menuOpen]);
-
 	return (
 		<DashboardContext.Provider
 			value={{ isMenuOpen: menuOpen, toggleMenu: toggleMenu }}>

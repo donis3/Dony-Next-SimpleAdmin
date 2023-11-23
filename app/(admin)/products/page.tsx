@@ -1,5 +1,4 @@
 export default function ProductsPage() {
-	console.log("Rendering products page");
 	return (
 		<div>
 			products page
@@ -7,7 +6,7 @@ export default function ProductsPage() {
 				src="./assets/bg-dark.jpg"
 				alt="bg image"
 				height="40"
-				width="800"
+				width="300"
 			/>
 		</div>
 	);

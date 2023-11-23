@@ -4,15 +4,19 @@ import { FaBars, FaHome, FaTimes } from "react-icons/fa";
 import ThemeSelect from "../theme/ThemeSelect";
 import { useContext } from "react";
 import { DashboardContext } from "@/app/(admin)/dashboard/DashboardContext";
+import { cn } from "@/lib/helpers/utils";
 
 export default function Navbar() {
 	const { isMenuOpen, toggleMenu } = useContext(DashboardContext);
 	return (
-		<header className="w-full h-[60px] bg-primary-800 dark:bg-primary-950 text-primary-50 flex flex-row px-2 py-4 md:px-4 justify-between items-center absolute top-0 z-40 border-b border-primary-950 shadow-sm">
+		<header className="w-full overflow-hidden h-[60px] bg-primary-800 dark:bg-primary-950 text-primary-50 flex flex-row px-2 py-4 md:px-4 justify-between items-center fixed top-0 z-40 border-b border-primary-950 shadow-sm">
 			<button
 				type="button"
 				onClick={() => toggleMenu(!isMenuOpen)}
-				className="p-2 bg-black/10 rounded-md text-xl">
+				className={cn(
+					"p-2  rounded-md text-xl transition-colors duration-500",
+					isMenuOpen ? "bg-white/10" : "bg-black/10",
+				)}>
 				{isMenuOpen ? <FaTimes /> : <FaBars />}
 			</button>
 
