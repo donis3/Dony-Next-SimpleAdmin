@@ -21,7 +21,7 @@ export default function DashboardLayout({
 				<Navbar />
 				<Sidebar />
 			</DashboardContextProvider>
-			<main className="pt-[60px] w-full">{children}</main>
+			<main className="pt-[60px] w-full transition-transform duration-300 z-0 ease-in-out">{children}</main>
 		</>
 	);
 }

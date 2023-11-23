@@ -12,17 +12,22 @@ import { MdDashboard } from "react-icons/md";
 export default function Sidebar() {
 	const pathname = usePathname();
 	const { isMenuOpen, toggleMenu } = useContext(DashboardContext);
-	const navRef = useClickOutside<HTMLDivElement>(() => toggleMenu(false));
+	const navRef = useClickOutside<HTMLDivElement>(
+		() => toggleMenu(false),
+		"header",
+	);
 
 	return (
 		<nav
 			ref={navRef}
 			className={cn(
-				"fixed top-0 left-0 min-h-screen bg-bgPrimary border-t border-primary-900  transition-transform duration-300 ease-in-out overflow-hidden whitespace-nowrap w-full sm:w-3/4 md:w-1/2 lg:w-1/3 xl:w-1/4 pt-[60px] shadow-md",
+				"fixed top-0 left-0 min-h-screen bg-bgPrimary dark:bg-primary-800 transition-transform duration-300 ease-in-out  pt-[60px] shadow-sm z-10",
+				"overflow-hidden whitespace-nowrap w-full sm:w-3/4 md:w-1/2 lg:w-1/3 xl:w-1/4",
 				isMenuOpen ? "translate-x-0" : "-translate-x-full",
 			)}
+			// Accessibility configuration.
 			aria-hidden={isMenuOpen ? "false" : "true"}
-			tabIndex={isMenuOpen ? 10 : -1}>
+			tabIndex={isMenuOpen ? 1 : -1}>
 			{/* Start navigation items */}
 
 			<ul className="p-3">
@@ -87,10 +92,13 @@ function NavItem({
 	return (
 		<Link
 			className={cn(
-				"transition-transform duration-300 w-full text-lg p-2 bg-primary-300 rounded-md text-primary-900 font-medium flex gap-2 items-center border border-primary-500 hover:bg-primary-900 hover:text-primary-100",
-				"hover:bg-primary-900 hover:text-primary-100 hover:scale-105 ",
+				"transition-transform duration-300 w-full text-lg p-2  rounded-md  font-medium flex gap-2 items-center ",
+				"bg-primary-300 text-primary-700 border border-primary-500 ",
+				"dark:bg-primary-700 dark:text-primary-100 border border-primary-500 ",
+				"hover:bg-primary-900 hover:text-primary-100 hover:border-primary-950 hover:scale-105 ",
 				"focus:border-primary-900 focus:scale-105",
-				active && "bg-primary-600 border-primary-900 text-primary-50",
+				active &&
+					"dark:bg-primary-300 border-primary-900 dark:text-primary-950 bg-primary-600 text-primary-50",
 			)}
 			href={href}
 			{...props}>

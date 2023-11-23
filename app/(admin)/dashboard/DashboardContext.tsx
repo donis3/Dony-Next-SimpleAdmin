@@ -1,5 +1,5 @@
 "use client";
-import { ReactNode, createContext, useState } from "react";
+import { ReactNode, createContext, useEffect, useState } from "react";
 
 const DashboardContext = createContext({
 	isMenuOpen: false,
@@ -21,8 +21,19 @@ export default function DashboardContextProvider({
 		if (typeof forcedState === "boolean") {
 			return setMenuOpen(forcedState);
 		}
-		return setMenuOpen((current) => !current);
+		return setMenuOpen(!menuOpen);
 	};
+
+	// Slide main content a little for effect when menu is open
+	useEffect(() => {
+		const mainContent = document.querySelector("main");
+
+		if (menuOpen === true) {
+			mainContent?.classList.add("translate-x-20", "overflow-hidden");
+		} else {
+			mainContent?.classList.remove("translate-x-20", "overflow-hidden");
+		}
+	}, [menuOpen]);
 
 	return (
 		<DashboardContext.Provider

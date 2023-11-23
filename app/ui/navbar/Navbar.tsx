@@ -8,10 +8,10 @@ import { DashboardContext } from "@/app/(admin)/dashboard/DashboardContext";
 export default function Navbar() {
 	const { isMenuOpen, toggleMenu } = useContext(DashboardContext);
 	return (
-		<header className="w-full h-[60px] bg-primary-800 text-primary-50 flex flex-row px-2 py-4 md:px-4 justify-between items-center absolute top-0 z-20 border-b border-primary-800">
+		<header className="w-full h-[60px] bg-primary-800 dark:bg-primary-950 text-primary-50 flex flex-row px-2 py-4 md:px-4 justify-between items-center absolute top-0 z-40 border-b border-primary-950 shadow-sm">
 			<button
 				type="button"
-				onClick={() => toggleMenu()}
+				onClick={() => toggleMenu(!isMenuOpen)}
 				className="p-2 bg-black/10 rounded-md text-xl">
 				{isMenuOpen ? <FaTimes /> : <FaBars />}
 			</button>
