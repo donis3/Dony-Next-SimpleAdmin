@@ -14,51 +14,54 @@
 	}
 }
 
+/* Color themese generated with https://uicolors.app/create */
+/* Colors must be defined as rgb values only to enable alpha channel through tailwind config */
+
 @layer base {
 	:root {
-		--color-neutral-50: theme(colors.gray.50);
-		--color-neutral-100: theme(colors.gray.100);
-		--color-neutral-200: theme(colors.gray.200);
-		--color-neutral-300: theme(colors.gray.300);
-		--color-neutral-400: theme(colors.gray.400);
-		--color-neutral-500: theme(colors.gray.500);
-		--color-neutral-600: theme(colors.gray.600);
-		--color-neutral-700: theme(colors.gray.700);
-		--color-neutral-800: theme(colors.gray.800);
-		--color-neutral-900: theme(colors.gray.900);
-		--color-neutral-950: theme(colors.gray.950);
+		--color-neutral-50: 191 203 223;
+		--color-neutral-100: 182 199 216;
+		--color-neutral-200: 152 179 205;
+		--color-neutral-300: 110 152 185;
+		--color-neutral-400: 74 117 150;
+		--color-neutral-500: 55 84 109;
+		--color-neutral-600: 38 59 80;
+		--color-neutral-700: 27 41 55;
+		--color-neutral-800: 19 28 37;
+		--color-neutral-900: 14 20 27;
+		--color-neutral-950: 18 25 33;
 	}
 
 	.theme-fuchsia {
-		--color-primary-50: #fbf6fd;
-		--color-primary-100: #f7ecfb;
-		--color-primary-200: #edd7f7;
-		--color-primary-300: #e2b8ef;
-		--color-primary-400: #d08ee4;
-		--color-primary-500: #ba63d4;
-		--color-primary-600: #9e42b7;
-		--color-primary-700: #843497;
-		--color-primary-800: #6e2c7c;
-		--color-primary-900: #5d2966;
-		--color-primary-950: #3a1042;
+		--color-primary-50: 251 246 253;
+		--color-primary-100: 247 236 251;
+		--color-primary-200: 237 215 247;
+		--color-primary-300: 226 184 239;
+		--color-primary-400: 208 142 228;
+		--color-primary-500: 186 99 212;
+		--color-primary-600: 158 66 183;
+		--color-primary-700: 132 52 151;
+		--color-primary-800: 110 44 124;
+		--color-primary-900: 93 41 102;
+		--color-primary-950: 58 16 66;
 	}
 
 	.theme-green {
-		--color-primary-50: #f2fcf1;
-		--color-primary-100: #e0f9df;
-		--color-primary-200: #c1f2c0;
-		--color-primary-300: #90e68f;
-		--color-primary-400: #65d463;
-		--color-primary-500: #33b631;
-		--color-primary-600: #259623;
-		--color-primary-700: #20761f;
-		--color-primary-800: #1d5e1d;
-		--color-primary-900: #1a4d1a;
-		--color-primary-950: #092a0a;
+		--color-primary-50: 242 252 241;
+		--color-primary-100: 224 249 223;
+		--color-primary-200: 195 241 193;
+		--color-primary-300: 146 229 144;
+		--color-primary-400: 90 208 88;
+		--color-primary-500: 51 182 49;
+		--color-primary-600: 37 150 35;
+		--color-primary-700: 33 118 31;
+		--color-primary-800: 29 94 29;
+		--color-primary-900: 26 77 26;
+		--color-primary-950: 9 42 10;
 	}
 
 	.theme-light {
-		--bgNeutral: theme(colors.white);
+		--bgNeutral: 255 255 255;
 		--fgNeutral: var(--color-neutral-900);
 
 		--bgPrimary: var(--color-primary-200);
@@ -68,7 +71,7 @@
 
 	.theme-dark {
 		--bgNeutral: var(--color-neutral-900);
-		--fgNeutral: theme(colors.white);
+		--fgNeutral: 255 255 255;
 		--bgPrimary: var(--color-primary-500);
 		--fgPrimary: var(--color-primary-100);
 		--primary: var(--color-primary-400);

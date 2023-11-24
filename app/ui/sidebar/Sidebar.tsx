@@ -6,8 +6,15 @@ import useClickOutside from "@/lib/useClickOutside";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ReactNode, useContext, useEffect } from "react";
-import { FaBox, FaBoxes, FaEllipsisV, FaHome, FaUserCircle } from "react-icons/fa";
+import {
+	FaBox,
+	FaBoxes,
+	FaEllipsisV,
+	FaHome,
+	FaUserCircle,
+} from "react-icons/fa";
 import { MdDashboard } from "react-icons/md";
+import UserRow from "./UserRow";
 
 export default function Sidebar() {
 	const pathname = usePathname();
@@ -59,15 +66,7 @@ export default function Sidebar() {
 				</ul>
 			</nav>
 
-			<div className="bg-neutral-100  dark:bg-neutral-900 text-fgNeutral w-full px-3 py-4 border-t-2 border-primary-900 flex flex-row justify-between gap-2 items-center group">
-				<div className="flex items-center gap-2 text-xl font-medium opacity-70 group-hover:opacity-100">
-					<FaUserCircle className="text-blue-700" />
-					Username
-				</div>
-				<button type="button">
-					<FaEllipsisV />
-				</button>
-			</div>
+			<UserRow user={true} />
 		</aside>
 	);
 }
