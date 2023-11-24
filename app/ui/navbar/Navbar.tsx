@@ -3,7 +3,7 @@ import Link from "next/link";
 import { FaBars, FaHome, FaTimes } from "react-icons/fa";
 import ThemeSelect from "../theme/ThemeSelect";
 import { useContext } from "react";
-import { DashboardContext } from "@/app/(admin)/dashboard/DashboardContext";
+import { DashboardContext } from "@/app/(admin)/DashboardContext";
 import { cn } from "@/lib/helpers/utils";
 
 export default function Navbar() {

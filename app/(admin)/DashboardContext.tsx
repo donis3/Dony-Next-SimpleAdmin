@@ -24,6 +24,13 @@ export default function DashboardContextProvider({
 		return setMenuOpen(!menuOpen);
 	};
 
+	useEffect(() => {
+		//Disable body scroll when menu is open
+		if (menuOpen === true)
+			document.documentElement.classList.add("scroll-lock");
+		else document.documentElement.classList.remove("scroll-lock");
+	}, [menuOpen]);
+
 	return (
 		<DashboardContext.Provider
 			value={{ isMenuOpen: menuOpen, toggleMenu: toggleMenu }}>

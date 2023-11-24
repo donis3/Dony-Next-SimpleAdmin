@@ -1,18 +1,12 @@
 "use client";
 
-import { DashboardContext } from "@/app/(admin)/dashboard/DashboardContext";
+import { DashboardContext } from "@/app/(admin)/DashboardContext";
 import { cn } from "@/lib/helpers/utils";
 import useClickOutside from "@/lib/useClickOutside";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ReactNode, useContext, useEffect } from "react";
-import {
-	FaBox,
-	FaBoxes,
-	FaEllipsisV,
-	FaHome,
-	FaUserCircle,
-} from "react-icons/fa";
+import { FaBox, FaBoxes, FaHome } from "react-icons/fa";
 import { MdDashboard } from "react-icons/md";
 import UserRow from "./UserRow";
 
@@ -31,7 +25,7 @@ export default function Sidebar() {
 	return (
 		<aside
 			className={cn(
-				"fixed left-0 top-0 bottom-0 h-screen  flex flex-col justify-between",
+				"fixed left-0 top-0 flex flex-col justify-between h-dscreen  ",
 				"w-full sm:w-3/4 md:w-1/2 lg:w-1/3 xl:w-1/4",
 				"transition-transform duration-300 ease-in-out",
 				" bg-bgPrimary dark:bg-primary-800 shadow-sm z-10",
@@ -39,7 +33,7 @@ export default function Sidebar() {
 			)}
 			ref={navRef}>
 			<nav
-				className="w-full p-3 flex-1 overflow-y-auto no-scrollbar" // Accessibility configuration.
+				className="w-full p-3 overflow-y-auto no-scrollbar" // Accessibility configuration.
 				aria-hidden={isMenuOpen ? "false" : "true"}
 				tabIndex={isMenuOpen ? 1 : -1}>
 				{/* Start navigation items */}
@@ -108,7 +102,7 @@ function NavItem({
 	return (
 		<Link
 			className={cn(
-				"transition-transform duration-300 w-full text-lg p-2  rounded-md  font-medium flex gap-2 items-center",
+				"transition-transform duration-300 w-full text-base p-2  rounded-md  font-medium flex gap-2 items-center",
 				"bg-primary-300 text-primary-700 border border-primary-500 ",
 				"dark:bg-primary-700 dark:text-primary-100 border border-primary-500 ",
 				"hover:bg-primary-900 hover:text-primary-100 hover:border-primary-950 hover:scale-105 ",
@@ -124,6 +118,7 @@ function NavItem({
 		</Link>
 	);
 }
+
 
 const navigationItems = [
 	{

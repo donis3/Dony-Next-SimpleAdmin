@@ -3,7 +3,7 @@ import Link from "next/link";
 import { FaBars } from "react-icons/fa";
 import Navbar from "../ui/navbar/Navbar";
 import Sidebar from "../ui/sidebar/Sidebar";
-import DashboardContextProvider from "./dashboard/DashboardContext";
+import DashboardContextProvider from "./DashboardContext";
 
 export const metadata: Metadata = {
 	title: "DonyAdmin - Admin Zone",
@@ -32,7 +32,7 @@ export default function DashboardLayout({
 				</aside> */}
 			</DashboardContextProvider>
 			<main className="pt-[60px] w-full transition-transform duration-300 z-0 ease-in-out">
-				<div className="container mx-auto ">{children}</div>
+				{children}
 			</main>
 		</>
 	);
