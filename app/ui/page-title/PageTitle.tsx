@@ -14,7 +14,7 @@ export default function PageTitle({ children }: { children: ReactNode }) {
 					name="search"
 					className="p-1 bg-transparent rounded-md"
 					placeholder="search"
-					autoComplete="false"
+					autoComplete="off"
 					defaultValue={""}
 				/>
 			</div>

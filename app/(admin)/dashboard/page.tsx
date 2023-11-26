@@ -1,13 +1,8 @@
 import Card from "@/app/ui/card/Card";
 import InfoCard from "@/app/ui/info-card/InfoCard";
 import PageTitle from "@/app/ui/page-title/PageTitle";
-import {
-	FaBell,
-	FaBox,
-	FaHandshake,
-	FaMoneyBill,
-	FaUser,
-} from "react-icons/fa";
+import SalesTable from "@/app/ui/table/SalesTable";
+import { FaHandshake, FaMoneyBill, FaUser } from "react-icons/fa";
 
 export default function Dashboard() {
 	return (
@@ -36,6 +31,8 @@ export default function Dashboard() {
 			<Card>Main card content</Card>
 
 			<Card title="Another card">Main card content</Card>
+
+			<SalesTable />
 
 			<div className="w-full h-full bg-green-700">Main Content</div>
 		</div>

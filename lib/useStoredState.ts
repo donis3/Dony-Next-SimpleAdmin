@@ -1,33 +1,34 @@
 "use client";
 import { useEffect, useState } from "react";
+import { log } from "./helpers/log";
 
-type StoredState<T> = [state: T | undefined, setState: (v: T) => void];
-
-//Load
-
-export default function useStoredState<T>(
+export default function usePersistentState<T>(
 	initialValue: T,
-	storageKey: string,
-): StoredState<T> {
-	const [state, setState] = useState<T>(initialValue);
+	key: string,
+): [T, (value: T) => void] {
+	const [state, setInternalState] = useState<T>(initialValue);
 
 	useEffect(() => {
 		try {
-			const currentValue = localStorage.getItem(storageKey) as T;
-			if (!currentValue) throw new Error(); //jump to catch block if current value doesn't exist
-			if (state !== currentValue) {
-				setState(currentValue);
-			}
-		} catch (error) {
-			//Storage key doesnt exist. Must be the first run. Save initial value to local
-			localStorage.setItem(storageKey, initialValue as string);
-		}
-	}, [state]);
+			const value = localStorage.getItem(key);
 
-	const setStoredState = (newValue: T) => {
-		localStorage.setItem(storageKey, newValue as string);
-		setState(newValue);
+			if (!value) return;
+
+			setInternalState(JSON.parse(value));
+		} catch (error) {
+			log("Error saving internal state", error);
+		}
+	}, [key]);
+
+	const setState = (value: T) => {
+		try {
+			localStorage.setItem(key, JSON.stringify(value));
+		} catch (error) {
+			log("Error setting internal state", error);
+		}
+		//Set app state regardless of storage err
+		setInternalState(value);
 	};
 
-	return [state, setStoredState];
+	return [state, setState];
 }
