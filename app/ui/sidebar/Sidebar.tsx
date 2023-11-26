@@ -26,7 +26,7 @@ export default function Sidebar() {
 		<aside
 			className={cn(
 				"fixed left-0 top-0 flex flex-col justify-between h-dscreen  ",
-				"w-full sm:w-3/4 md:w-1/2 lg:w-1/3 xl:w-1/4",
+				"w-full sm:w-3/4 md:w-1/2 lg:w-1/3 xl:w-1/4 2xl:w-1/5 3xl:w-1/6",
 				"transition-transform duration-300 ease-in-out",
 				" bg-bgPrimary dark:bg-primary-800 shadow-sm z-10",
 				isMenuOpen ? "translate-x-0" : "-translate-x-full",
