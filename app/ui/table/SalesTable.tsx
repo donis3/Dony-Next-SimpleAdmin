@@ -67,13 +67,17 @@ export default function SalesTable() {
 					</label>
 					<select
 						id="sales-table-size"
-						className="rounded-md bg-neutral-600/40 font-medium p-1 text-sm"
+						className="rounded-md font-medium p-1 text-sm bg-bgNeutral text-fgNeutral"
 						value={size}
 						onChange={(e) =>
 							pagination.changeSize(parseInt(e.target.value))
 						}>
-						<option value={5}>5</option>
-						<option value={10}>10</option>
+						<option value={5} className="">
+							5
+						</option>
+						<option value={10} className="">
+							10
+						</option>
 					</select>
 				</div>
 			</div>
