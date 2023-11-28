@@ -9,6 +9,9 @@ const config: Config = {
 	],
 	theme: {
 		extend: {
+			fontFamily: {
+				sans: ["var(--font-neuehaas)"],
+			},
 			screens: {
 				sm: "640px",
 				// => @media (min-width: 640px) { ... }

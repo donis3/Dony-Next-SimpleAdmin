@@ -5,6 +5,8 @@ import { FaSun, FaMoon, FaPalette } from "react-icons/fa";
 import { useEffect } from "react";
 import { cn } from "@/lib/helpers/utils";
 
+const themeNames = ["theme-fuchsia", "theme-green"];
+
 export default function ThemeSelect() {
 	const [mode, setMode] = useStoredState<string>("light", "theme-mode");
 	const [theme, setTheme] = useStoredState<string>("fuchsia", "theme");
@@ -25,7 +27,12 @@ export default function ThemeSelect() {
 		const newThemeClass = `theme-${theme}`;
 		const newMode = mode === "dark" ? "dark" : "";
 
-		document.documentElement.className = `${newThemeClass} ${newMode}`;
+		//document.documentElement.className = `${newThemeClass} ${newMode}`;
+
+		//Remove other themes and add current theme
+		document.documentElement.classList.remove(...themeNames, "dark");
+		if (newMode) document.documentElement.classList.add("dark");
+		document.documentElement.classList.add(newThemeClass);
 
 		//Change meta theme-color for mobile and chrome views. Navbar color should match it.
 		//Get current theme color var from css

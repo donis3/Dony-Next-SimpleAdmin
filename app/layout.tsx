@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { cn } from "@/lib/helpers/utils";
+import { NeueHaas } from "./fonts/fonts";
 
 export const metadata: Metadata = {
 	title: "Landing Page",
@@ -24,6 +25,7 @@ export default function RootLayout({
 				"theme-green",
 				"theme-fuchsia",
 				"max-w-[100vw] overflow-x-hidden",
+				NeueHaas.variable,
 			)}>
 			<body className="bg-bgNeutral text-fgNeutral theme-light dark:theme-dark transition-colors duration-300 ">
 				{children}

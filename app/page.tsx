@@ -39,16 +39,17 @@ export default function Home() {
 								Welcome to Monster Panel, a simple responsive
 								next.js & tailwind template for admin panel
 								dashboards. All components are hand crafted
-								without any ui libraries. Recharts is used for
-								displaying line charts.
+								without any ui libraries.
 							</p>
-							<ul className="py-2 px-4  text-fgNeutral/90 leading-snug text-start">
+							<ul className="py-2 px-4  text-fgNeutral/90 leading-snug text-start space-y-1">
 								<li>✓ Simple and responsive design</li>
 								<li>✓ Easy to expand upon</li>
+								<li>✓ Very few dependencies</li>
 								<li>✓ Next.js 14 & App router</li>
 								<li>
-									✓ No external dependencies other than
-									Tailwind for styling
+									✓ Using clsx and tailwind-merge for tailwind
+									conflict resolutions and conditional
+									classes.
 								</li>
 								<li>✓ Changeable theme using tailwind</li>
 								<li>✓ Remembers selected Theme & Dark mode</li>
@@ -61,12 +62,12 @@ export default function Home() {
 									viewport height
 								</li>
 								<li>
-									✓ Custom hooks for stored state and many
-									more
+									✓ Multiple Custom hooks including persistent
+									state
 								</li>
 								<li>
-									✓ Format numbers, dates according to client
-									prefs
+									✓ Format numbers and dates according to
+									client browser locale
 								</li>
 							</ul>
 
