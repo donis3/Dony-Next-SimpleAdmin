@@ -19,7 +19,7 @@ export default function NotFound() {
 					<Link
 						href={"/"}
 						className="p-2 text-xl font-bold flex flex-row gap-1 items-center">
-						Dony Admin Design
+						Dony-Next-SimpleAdmin
 					</Link>
 				</div>
 

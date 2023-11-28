@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Footer() {
 	return (
-		<footer className="w-full pt-4 pb-2 px-4 bg-bgPrimary/30 text-fgNeutral">
+		<footer className="w-full pt-4 pb-2 px-4 bg-bgPrimary/30 text-fgNeutral mt-10">
 			<div className="w-full container mx-auto">
 				<div className="flex flex-col items-center gap-4 md:flex-row md:items-center md:justify-between">
 					<Link
@@ -30,18 +30,12 @@ export default function Footer() {
 								Dashboard
 							</Link>
 						</li>
-						<li>
-							<Link
-								href={"/products"}
-								className="hover:underline">
-								Products
-							</Link>
-						</li>
 					</ul>
 				</div>
 
 				<div className="text-sm py-2 border-t border-fgPrimary/20 mt-8 font-medium text-fgNeutral/70">
-					<span>©2023 Deniz Özkan</span>
+					<span>©2023 </span>
+					<Link href={"https://github.com/donis3"} className="text-fgPrimary hover:underline">Deniz Özkan</Link>
 				</div>
 			</div>
 		</footer>
