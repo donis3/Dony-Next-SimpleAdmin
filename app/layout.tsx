@@ -1,10 +1,15 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { cn } from "@/lib/helpers/utils";
 
 export const metadata: Metadata = {
 	title: "Landing Page",
 	description: "An admin dashboard - learn by making project",
+};
+
+export const viewport: Viewport = {
+	//Default theme color
+	themeColor: "rgb(29 94 29)",
 };
 
 export default function RootLayout({

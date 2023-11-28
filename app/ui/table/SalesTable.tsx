@@ -14,33 +14,43 @@ export default function SalesTable() {
 	});
 
 	return (
-		<section className="w-full bg-neutral-200 text-neutral-900 dark:bg-neutral-800 dark:text-neutral-100 rounded-md">
-			<table className="w-full rounded-md overflow-clip">
-				<thead className="dark:bg-neutral-900 font-medium text-base bg-neutral-300 rounded-t-md">
-					<tr>
-						<th className="px-1.5 py-2 text-center">Sale ID</th>
-						<th className="px-1.5 py-2 text-center">Name</th>
-						<th className="px-1.5 py-2 text-center">Email</th>
-						<th className="px-1.5 py-2 text-center">Amount</th>
-						<th className="px-1.5 py-2 text-center">Date</th>
-					</tr>
-				</thead>
-				<tbody className="">
-					{pagination.currentData.map((row) => (
-						<tr key={row.saleId} className="group">
-							<TCell className="text-center">{row.saleId}</TCell>
-							<TCell className="text-center">{row.name}</TCell>
-							<TCell className="text-center">{row.email}</TCell>
-							<TCell className="text-center">
-								{formatCurrency(row.amount, "USD")}
-							</TCell>
-							<TCell className="text-center">
-								{formatDate(row.date)}
-							</TCell>
+		<section className="w-full bg-neutral-200 text-neutral-900 dark:bg-neutral-800 dark:text-neutral-100 rounded-md ">
+			<div className="w-full overflow-x-auto rounded-md">
+				<table className="w-full">
+					<thead className="dark:bg-neutral-900 font-medium text-sm md:text-base whitespace-nowrap bg-neutral-300 rounded-t-md">
+						<tr>
+							<th className="px-1.5 py-2 text-center">Sale ID</th>
+							<th className="px-1.5 py-2 text-center">Name</th>
+							<th className="px-1.5 py-2 text-center">Email</th>
+							<th className="px-1.5 py-2 text-center">Amount</th>
+							<th className="px-1.5 py-2 text-center">Date</th>
 						</tr>
-					))}
-				</tbody>
-			</table>
+					</thead>
+					<tbody className="">
+						{pagination.currentData.map((row) => (
+							<tr
+								key={row.saleId}
+								className="group whitespace-nowrap text-sm md:text-base">
+								<TCell className="text-center">
+									{row.saleId}
+								</TCell>
+								<TCell className="text-center ">
+									{row.name}
+								</TCell>
+								<TCell className="text-center">
+									{row.email}
+								</TCell>
+								<TCell className="text-center">
+									{formatCurrency(row.amount, "USD")}
+								</TCell>
+								<TCell className="text-center">
+									{formatDate(row.date)}
+								</TCell>
+							</tr>
+						))}
+					</tbody>
+				</table>
+			</div>
 			<div className="flex flex-row items-center justify-between gap-3 p-2 text-sm border-t border-neutral-950/20">
 				<div className="flex flex-row gap-3">
 					<button

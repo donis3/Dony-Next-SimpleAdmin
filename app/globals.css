@@ -88,6 +88,9 @@
 		--bgPrimary: var(--color-primary-200);
 		--fgPrimary: var(--color-primary-800);
 		--primary: var(--color-primary-600);
+
+		/* Match navbar color (Light 800 dark 950)*/
+		--theme-color: rgb(var(--color-primary-800));
 	}
 
 	.theme-dark {
@@ -96,5 +99,8 @@
 		--bgPrimary: var(--color-primary-500);
 		--fgPrimary: var(--color-primary-100);
 		--primary: var(--color-primary-400);
+
+		/* Match navbar color (Light 800 dark 950)*/
+		--theme-color: rgb(var(--color-primary-950));
 	}
 }

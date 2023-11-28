@@ -26,6 +26,17 @@ export default function ThemeSelect() {
 		const newMode = mode === "dark" ? "dark" : "";
 
 		document.documentElement.className = `${newThemeClass} ${newMode}`;
+
+		//Change meta theme-color for mobile and chrome views. Navbar color should match it.
+		//Get current theme color var from css
+		const themeColor = getComputedStyle(document.body).getPropertyValue(
+			"--theme-color",
+		);
+		//Switch meta tag
+		if (themeColor) {
+			const ogcolor = document.querySelector('meta[name="theme-color"]');
+			ogcolor?.setAttribute("content", themeColor);
+		}
 	}, [theme, mode]);
 
 	return (
