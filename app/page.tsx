@@ -70,8 +70,8 @@ export default function Home() {
 									client browser locale
 								</li>
 								<li>
-									✓ Local font loaded using next/font/local and
-									imported via tailwind config.
+									✓ Local font loaded using next/font/local
+									and imported via tailwind config.
 								</li>
 							</ul>
 
@@ -83,7 +83,7 @@ export default function Home() {
 									<FaArrowRight />
 								</Link>
 								<Link
-									href="https://donis3.github.io/Dony-Next-SimpleAdmin/"
+									href="https://github.com/donis3/Dony-Next-SimpleAdmin"
 									className="px-5 py-3  text-base font-medium text-center rounded-lg border border-neutral-300 hover:bg-primary-800 flex flex-row gap-2 items-center">
 									View Repo
 									<FaGithub />
