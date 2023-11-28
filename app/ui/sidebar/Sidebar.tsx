@@ -7,7 +7,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ReactNode, useContext, useEffect } from "react";
 import { FaBox, FaBoxes, FaHome } from "react-icons/fa";
-import { MdDashboard } from "react-icons/md";
+import { MdDashboard, MdError } from "react-icons/md";
 import UserRow from "./UserRow";
 
 export default function Sidebar() {
@@ -130,61 +130,19 @@ const navigationItems = [
 				icon: <MdDashboard />,
 				href: "/dashboard",
 			},
+			{
+				itemName: "Error Page",
+				icon: <MdError />,
+				href: "/err",
+			},
 		],
 	},
 	{
-		categoryName: "Management",
+		categoryName: "Manage Products",
 		items: [
 			{ itemName: "Products", icon: <FaBox />, href: "/products" },
 			{ itemName: "Categories", icon: <FaBoxes />, href: "/categories" },
 		],
 	},
-	// Test
-	{
-		categoryName: "Management",
-		items: [
-			{ itemName: "Products", icon: <FaBox />, href: "/products" },
-			{ itemName: "Categories", icon: <FaBoxes />, href: "/categories" },
-			{ itemName: "Categories", icon: <FaBoxes />, href: "/categories" },
-			{ itemName: "Categories", icon: <FaBoxes />, href: "/categories" },
-			{ itemName: "Categories", icon: <FaBoxes />, href: "/categories" },
-			{ itemName: "Categories", icon: <FaBoxes />, href: "/categories" },
-		],
-	},
-	// Test
-	{
-		categoryName: "Management",
-		items: [
-			{ itemName: "Products", icon: <FaBox />, href: "/products" },
-			{ itemName: "Categories", icon: <FaBoxes />, href: "/categories" },
-			{ itemName: "Categories", icon: <FaBoxes />, href: "/categories" },
-			{ itemName: "Categories", icon: <FaBoxes />, href: "/categories" },
-			{ itemName: "Categories", icon: <FaBoxes />, href: "/categories" },
-			{ itemName: "Categories", icon: <FaBoxes />, href: "/categories" },
-		],
-	},
-	// Test
-	{
-		categoryName: "Management",
-		items: [
-			{ itemName: "Products", icon: <FaBox />, href: "/products" },
-			{ itemName: "Categories", icon: <FaBoxes />, href: "/categories" },
-			{ itemName: "Categories", icon: <FaBoxes />, href: "/categories" },
-			{ itemName: "Categories", icon: <FaBoxes />, href: "/categories" },
-			{ itemName: "Categories", icon: <FaBoxes />, href: "/categories" },
-			{ itemName: "Categories", icon: <FaBoxes />, href: "/categories" },
-		],
-	},
-	// Test
-	{
-		categoryName: "Management",
-		items: [
-			{ itemName: "Products", icon: <FaBox />, href: "/products" },
-			{ itemName: "Categories", icon: <FaBoxes />, href: "/categories" },
-			{ itemName: "Categories", icon: <FaBoxes />, href: "/categories" },
-			{ itemName: "Categories", icon: <FaBoxes />, href: "/categories" },
-			{ itemName: "Categories", icon: <FaBoxes />, href: "/categories" },
-			{ itemName: "Categories", icon: <FaBoxes />, href: "/categories" },
-		],
-	},
+	
 ];

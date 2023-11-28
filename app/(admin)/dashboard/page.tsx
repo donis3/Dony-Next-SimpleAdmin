@@ -6,7 +6,7 @@ import SalesTable from "@/app/ui/table/SalesTable";
 import dynamic from "next/dynamic";
 import { FaHandshake, FaMoneyBill, FaUser } from "react-icons/fa";
 
-// Lazy load chart
+// Lazy load chart because its a client component and should not be ssr'd
 const Saleschart = dynamic(() => import("../../ui/chart/Saleschart"), {
 	ssr: false,
 	loading: () => <p>Loading...</p>,
@@ -15,7 +15,7 @@ const Saleschart = dynamic(() => import("../../ui/chart/Saleschart"), {
 export default function Dashboard() {
 	return (
 		<div className="container mx-auto flex flex-col gap-5 md:gap-8 px-3 py-5">
-			<PageTitle>Dony Dashboard</PageTitle>
+			<PageTitle>Monster Dashboard</PageTitle>
 			<div className="w-full grid grid-cols-1 gap-5 md:grid-cols-3 md:gap-8">
 				<InfoCard title="Total Users" icon={<FaUser />}>
 					25

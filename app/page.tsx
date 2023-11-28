@@ -5,32 +5,20 @@ import ThemeSelect from "@/app/ui/theme/ThemeSelect";
 export default function Home() {
 	return (
 		<>
-			<header className="flex justify-end p-4">
-				<ThemeSelect />
+			<header className="flex justify-between p-2 h-[60px] gap-2 items-center bg-primary-800 dark:bg-primary-950 text-primary-50">
+				<div className="flex-1">
+					<Link
+						href={"/"}
+						className="p-2 text-xl font-bold flex flex-row gap-1 items-center">
+						Dony Admin Design
+					</Link>
+				</div>
+
+				<div>
+					<ThemeSelect />
+				</div>
 			</header>
 			<main className="flex flex-col gap-y-10 p-4">
-				<section>
-					<h1 className="bg-bgPrimary text-fgPrimary p-3 font-bold text-xl">
-						Welcome to landing page
-					</h1>
-					<p className="p-3">
-						Lorem, ipsum dolor sit amet consectetur adipisicing
-						elit. Voluptas repellat voluptate ea, fuga quia eum
-						cumque necessitatibus itaque est nemo, quisquam,
-						accusantium praesentium temporibus porro modi mollitia
-						eos provident repellendus.
-					</p>
-				</section>
-
-				<section>
-					<h2 className="bg-bgPrimary text-fgPrimary p-3 font-bold text-lg">
-						A client component!
-					</h2>
-					<div className="p-3">
-						<ClientComponent />
-					</div>
-				</section>
-
 				<section>
 					<h2 className="bg-bgPrimary text-fgPrimary p-3 font-bold text-lg">
 						Looking for the dashboard?

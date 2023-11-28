@@ -44,6 +44,8 @@ export default function Saleschart() {
 				/>
 				<YAxis />
 				<Tooltip
+					labelClassName="text-neutral-800 font-bold"
+					
 					labelFormatter={(label) => {
 						return formatDate(label);
 					}}
