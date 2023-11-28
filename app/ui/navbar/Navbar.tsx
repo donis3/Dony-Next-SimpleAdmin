@@ -20,8 +20,9 @@ export default function Navbar() {
 				{isMenuOpen ? <FaTimes /> : <FaBars />}
 			</button>
 
-			<Link href={"/dashboard"} className="p-2 text-xl font-bold">
-				DonyAdmin
+			<Link href={"/dashboard"} className="p-2 text-xl font-bold flex flex-row gap-1 items-center">
+				<img src="./assets/appicon.png" alt="Monster Icon" className="h-8" />
+				MonsterPanel
 			</Link>
 			<div className=" flex-1 flex items-center justify-end gap-2">
 				<Link

@@ -61,15 +61,23 @@ export default function useLocale({ language }: useLocaleProps = {}) {
 		return `${amount} ${currency}`;
 	}
 
-	function formatDate(date?: string) {
-		const givenDate = date ? new Date(date) : new Date();
+	function formatDate(date?: string | Date): string {
+		let givenDate: any;
+
+		if (date && date instanceof Date) {
+			givenDate = date;
+		} else if (typeof date === "string") {
+			givenDate = new Date(date);
+		} else {
+			givenDate = new Date();
+		}
+
 		try {
 			return new Intl.DateTimeFormat(locale).format(givenDate);
 		} catch (error) {
 			if (error instanceof Error) log(error.message);
+			return date as string;
 		}
-
-		return date;
 	}
 
 	return { language: locale, formatCurrency, changeLocale, formatDate };

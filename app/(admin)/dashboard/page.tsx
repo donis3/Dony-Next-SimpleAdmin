@@ -1,8 +1,16 @@
 import Card from "@/app/ui/card/Card";
+
 import InfoCard from "@/app/ui/info-card/InfoCard";
 import PageTitle from "@/app/ui/page-title/PageTitle";
 import SalesTable from "@/app/ui/table/SalesTable";
+import dynamic from "next/dynamic";
 import { FaHandshake, FaMoneyBill, FaUser } from "react-icons/fa";
+
+// Lazy load chart
+const Saleschart = dynamic(() => import("../../ui/chart/Saleschart"), {
+	ssr: false,
+	loading: () => <p>Loading...</p>,
+});
 
 export default function Dashboard() {
 	return (
@@ -28,13 +36,15 @@ export default function Dashboard() {
 				</InfoCard>
 			</div>
 
-			<Card>Main card content</Card>
-
-			<Card title="Another card">Main card content</Card>
+			<Card title="Message from developer">
+				Welcome to DonyAdmin, a modern next.js and tailwind admin
+				dashboard.
+			</Card>
 
 			<SalesTable />
-
-			<div className="w-full h-full bg-green-700">Main Content</div>
+			<Card title="Sales Data" bodyClass="px-0 md:px-2 py-5 relative">
+				<Saleschart />
+			</Card>
 		</div>
 	);
 }

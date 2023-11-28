@@ -4,6 +4,7 @@ import { FaBars } from "react-icons/fa";
 import Navbar from "../ui/navbar/Navbar";
 import Sidebar from "../ui/sidebar/Sidebar";
 import DashboardContextProvider from "./DashboardContext";
+import Footer from "../ui/footer/Footer";
 
 export const metadata: Metadata = {
 	title: "DonyAdmin - Admin Zone",
@@ -31,9 +32,12 @@ export default function DashboardLayout({
 					<div className="bg-red-400 w-full p-3">User</div>
 				</aside> */}
 			</DashboardContextProvider>
-			<main className="pt-[60px] w-full transition-transform duration-300 z-0 ease-in-out">
-				{children}
-			</main>
+			<div className="min-h-dscreen flex flex-col gap-10 justify-between">
+				<main className="pt-[60px] w-full transition-transform duration-300 z-0 ease-in-out flex-1">
+					{children}
+				</main>
+				<Footer />
+			</div>
 		</>
 	);
 }

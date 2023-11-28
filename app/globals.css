@@ -18,6 +18,11 @@
 		height: 100dvh;
 	}
 
+	.min-h-dscreen {
+		min-height: 100vh; /* fallback for Opera, IE and etc. */
+		min-height: 100dvh;
+	}
+
 	.scroll-lock {
 		/* want to fix the height to the window height */
 		height: calc(var(--window-inner-height) - 1px);
