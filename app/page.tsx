@@ -69,6 +69,10 @@ export default function Home() {
 									✓ Format numbers and dates according to
 									client browser locale
 								</li>
+								<li>
+									✓ Local font loaded using next/font/local and
+									imported via tailwind config.
+								</li>
 							</ul>
 
 							<div className="mt-10 flex flex-row gap-2 items-center justify-center md:justify-start">
